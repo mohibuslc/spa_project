@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+
+
+import Data from '../src/Data/Data.json';
+import React,{useState,useEffect} from 'react';
+import Employee from '../src/Employee/Employee';
+
 import './App.css';
+import Cart from './Cart/Cart';
+
+
+
 
 function App() {
+
+  const[employe , setEmploye]=useState([])
+  const [cart, setCart]=useState([])
+const AddEmployee=(pd)=>{
+
+  const newCart =[...cart, pd]
+  setCart(newCart);
+}
+  useEffect(()=>{
+
+setEmploye(Data)
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    
+    <div className="Employee-container">
+     
+
+
+   <div className="data-container">
+   
+      {
+
+        employe.map(pd => <Employee pd={pd} AddEmployee={AddEmployee}></Employee>)
+      
+      }
+   
+  </div>
+  <div className="cart-container">
+
+  <Cart cart={cart}></Cart>
+    
+  </div>
     </div>
   );
 }
