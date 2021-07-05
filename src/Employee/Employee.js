@@ -5,6 +5,9 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Employee = (props) => {
     const handle=props.AddEmployee
+    const Name=props.AddEmploye
+    
+  
     const {name, img, email, salary}=props.pd;
 const imgStyle={
 
@@ -27,7 +30,7 @@ const dataStyle ={
             <p>Employee_Email: {email}</p>
             <h3>Salary: {salary}</h3>
             <button onClick={()=>handle(props.pd)}> <FontAwesomeIcon icon={faCoffee} />Employee_Added</button>
-       
+            <button onClick={()=>Name(name)}>Add-Name</button>
 
             </div>
      

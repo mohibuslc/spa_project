@@ -21,6 +21,7 @@ const Cart = (props) => {
         <h1>Employee Information : </h1> 
         <p>Employee Length :{cart.length}</p>
         <p>Total Anual Salary :{Total}</p>
+        <p>Name: </p>
         </div>
     );
 };
